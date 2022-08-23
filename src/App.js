@@ -1,13 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
+import { ThemeProvider } from '@mui/material';
+import theme from './themeConfig'
 
 function App() {
+  const saludo = 'Hola Profe'
   return (
-    <div className="App">
-      <h3>NavBar</h3>
-      <h1>Body</h1>
-      <h4>footer</h4>
-    </div>
+   
+    <ThemeProvider theme = {theme}>
+      < NavBar />
+      <ItemListContainer saludar = {saludo}/>
+    
+    </ThemeProvider>
+    
   );
 }
 
