@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import CartWidget from './CartWidget';
 
+
 const pages = ['Productos', 'Ofertas', 'Contacto'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -127,7 +128,7 @@ export default function NavBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <CartWidget />
+            <CartWidget /> 
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"

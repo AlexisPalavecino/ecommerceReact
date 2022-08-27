@@ -1,10 +1,14 @@
-import React from 'react'
+import React from 'react';
+
+
 
 export default function ItemListContainer({saludar}) {
-    return (
+  
+  return (
     
     <div>
         <p>{saludar}</p>
+        
     </div>
   )
 }
