@@ -5,10 +5,13 @@ import ItemListContainer from './components/ItemListContainer';
 import { ThemeProvider } from '@mui/material';
 import theme from './themeConfig'
 import ItemCount from './components/ItemCount';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+
 
 
 function App() {
-  const saludo = 'Desafio contador. Gracias!!!!'
+  const saludo = 'Desafio Item y promesas!!!!'
 
   const [valorInicial, setvalorInicial] = useState(3);
   const [stock, setStock] = useState(10)
@@ -30,10 +33,21 @@ function App() {
   return (
    
     <ThemeProvider theme = {theme}>
+      
+      {/* <ItemListContainer saludar = {saludo}/> */}
+      {/* <ItemCount valorInicial={valorInicial} stock={stock} onAdd={onAdd} restar={restar}/> */}
+    {/* <Productos />  */}
+      <BrowserRouter>
       < NavBar />
-      <ItemListContainer saludar = {saludo}/>
-      <ItemCount valorInicial={valorInicial} stock={stock} onAdd={onAdd} restar={restar}/>
-      {/* <Productos /> */}
+        <Routes>
+          <Route path="/" element={<ItemListContainer />}/>
+          <Route path="/category/:idCategory" element={<ItemListContainer />}/>
+          <Route path="/product/:idProduct" element={<ItemDetailContainer />}/>
+        </Routes>
+        <ItemCount valorInicial={valorInicial} stock={stock} onAdd={onAdd} restar={restar}/>
+      </BrowserRouter>
+
+      
       
     
     </ThemeProvider>
