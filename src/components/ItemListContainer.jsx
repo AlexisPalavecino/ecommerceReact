@@ -17,7 +17,7 @@ export default function ItemListContainer({saludar}) {
   // );
 
 const [listProducts, setlistProducts]=useState([])
-useEffect(()=>{
+  useEffect(()=>{
   customFech(Products)
   .then(data=>setlistProducts(data))
 },[])

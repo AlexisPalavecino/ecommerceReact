@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import CartWidget from './CartWidget';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 
 const pages = ['Productos', 'Ofertas', 'Contacto'];
