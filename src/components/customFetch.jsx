@@ -1,8 +1,14 @@
+import { TrendingUp } from "@mui/icons-material"
+
 // PROMESA
 export const customFech = (products) =>{
     return new Promise((resolve, reject) => {
+        let condicion = true
         setTimeout(() =>{
-            resolve(products)}, 2000)
+            if (condicion) {
+            resolve(products)}else{
+                reject('error')
+            }}, 2000)
     }
 )}
 

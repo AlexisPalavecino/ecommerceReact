@@ -26,8 +26,9 @@ console.log(listProducts)
   return (
     
     <>
-        <p>{saludar}</p>
+       <div className='cardContainer'>
        <ItemList listProducts={listProducts} /> 
+       </div>
     </>
   )
 }

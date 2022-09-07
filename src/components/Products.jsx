@@ -1,27 +1,38 @@
 const products = [
   {
     id: 1,
-    Title: "articulo01",
-    price: 100,
-    detail:"detalle del producto"
+    title: "Imperial",
+    price: 8000,
+    detail:"detalle del producto",
+    img:"https://i.ibb.co/9pF0N1Q/mateimperial00.webp",
+    category: "Imperiales",
 },
 {
     id: 2,
-    Title: "articulo02",
-    price: 100,
-    detail:"detalle del producto"
+    title: "Camionero",
+    price: 3500,
+    detail:"detalle del producto",
+    img:"https://i.ibb.co/mvCwWPP/matecamionero02.jpg",
+    category: "Camionero",
+
 },
 {
     id: 3,
-    Title: "articulo03",
-    price: 100,
-    detail:"detalle del producto"
+    title: "Torpedo",
+    price: 3000,
+    detail:"detalle del producto",
+    img:"https://i.ibb.co/L9H36Ty/matetorpedo01.jpg",
+    category: "Torpedo",
 },
 {
     id: 4,
-    Title: "articulo04",
-    price: 100,
-    detail:"detalle del producto"
+    title: "Termolar",
+    price: 11000,
+    detail:"detalle del producto",
+    img:"https://i.ibb.co/pnQ8sx8/termolar00.jpg",
+    category: "Termolar",
+
+
 }
 ]; 
 
