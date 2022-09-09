@@ -1,24 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
+//import { data } from "../mocks/mockdata";
 import { customFech } from "./customFetch";
-import Products from './Products';
+
 import ItemDetail from './ItemDetail'
+import products from "./Products";
+
+
 
 export default function ItemDetailContainer() {
 
   const [productDetail, setProductDetail]= useState({})
-  const [loading, setLoading]= useState(true)
-  const {idProduct} = useParams();
+  const [loading, setLoading]= useState(false)
+  const {id} = useParams();
 
   useEffect(()=>{
-    customFech
-    .then((res)=> setProductDetail(res.find((item)=> item.id === idProduct)))
+    setLoading(true)
+    customFech(products)
+    .then((res)=> setProductDetail(res.find((item)=> item.id === id)))
     .catch((error)=> console.log(error))
     .finally(()=> setLoading(false))
-  },[idProduct])
+  },[id])
+
+  // const ItemDetailList = ({productDetail}) =>{
+  //   {productDetail.map((product)=><ItemDetail key={product.id} product={product}/>)}
+  // }
 
     
   return (
-    <div>{loading ? <p>Loading...</p> : <ItemDetail productDetail={productDetail}/>}</div>
+    <div >{loading ? <p>Cargando...</p> :<ItemDetail ProductDetail={productDetail}/>} </div>
   )
 }

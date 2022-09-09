@@ -1,4 +1,4 @@
-import { TrendingUp } from "@mui/icons-material"
+
 
 // PROMESA
 export const customFech = (products) =>{

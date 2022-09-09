@@ -1,12 +1,12 @@
 //import { padding } from '@mui/system'
 import React from 'react'
 import ItemCount from './ItemCount'
-import products from './Products'
 import { useNavigate } from 'react-router-dom'
 
-const ItemDetail = (productDetail) => {
 
-  const{ id,img, price, title, stock, detail, category} = products
+const Item = ({product}) => {
+
+  const{ img, price, title, stock, detail, category} = product
   const navegar = useNavigate()
   return (
     // <div style={{border:'3px solid green', borderRadius:'5px'}}>
@@ -20,11 +20,9 @@ const ItemDetail = (productDetail) => {
 				{detail}
 			</div>
       <ItemCount />
-      <div>
-        <button onclik={()=> navegar(`/detalle/${id}`)}>Ver Mas</button>
-      </div>
+      
     </div>
   )
 }
 
-export default ItemDetail
+export default Item

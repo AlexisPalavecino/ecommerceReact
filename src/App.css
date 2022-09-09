@@ -40,6 +40,7 @@
 .cardContainer{
   display: flex;
   justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
   border: solid 2px rgb(0, 0, 0);
   border-radius: 5px;

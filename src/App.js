@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Test from './Test/Test';
 
+//export const contexto = createContext();
 
 
 
@@ -16,7 +17,8 @@ function App() {
 
   
   return (
-   
+    //<contexto.Provider value={{ color, setColor }}>
+
     <ThemeProvider theme = {theme}>
       
       {/* <ItemListContainer saludar = {saludo}/> */}
@@ -25,10 +27,10 @@ function App() {
       <BrowserRouter>
       < NavBar />
         <Routes>
-          <Route path="/test" element={<Test />}/>
-          <Route path="/" element={<ItemListContainer />}/>
-          <Route path="/category/:idCategory" element={<ItemListContainer />}/>
-          <Route path="/product/:idProduct" element={<ItemDetailContainer />}/>
+           <Route path="/" element={<ItemListContainer />}/>
+          <Route path="/category/:categoryid" element={<ItemListContainer />}/>
+          <Route path="/detalle/:id" element={<ItemDetailContainer />}/>
+          
         </Routes>
        
       </BrowserRouter>
@@ -37,6 +39,7 @@ function App() {
       
     
     </ThemeProvider>
+    //</contexto.Provider>
     
   );
   }

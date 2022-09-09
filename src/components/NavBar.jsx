@@ -13,10 +13,10 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import CartWidget from './CartWidget';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 
-const pages = ['Productos', 'Ofertas', 'Contacto'];
+const pages = ['Imperial', 'Torpedos', 'Camioneros','Termos'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export default function NavBar() {
@@ -42,12 +42,15 @@ export default function NavBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <RouterLink to="/" >
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+          
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            //component={RouterLink} to={`/`}
+            //href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -58,8 +61,9 @@ export default function NavBar() {
               textDecoration: 'none',
             }}
           >
-            <h1>MateRos</h1>  
+           <h1>MateRos</h1>   
           </Typography>
+          </RouterLink>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -91,9 +95,11 @@ export default function NavBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <RouterLink key={page} to={`/category/${page}`}>
+                <MenuItem  onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
+                </RouterLink>
               ))}
             </Menu>
           </Box>
@@ -101,8 +107,9 @@ export default function NavBar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href=""
+            //component="a"
+            //href=""
+            component={RouterLink} to={`/`}
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -119,6 +126,7 @@ export default function NavBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
+              component={RouterLink} to={`/category/${page}`}
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}

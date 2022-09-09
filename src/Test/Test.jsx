@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
+//import { contexto } from '../App';
+
 
 export default function Test() {
+
+    //const { color, setColor } = useContext(contexto);
+
+
     function handleClick(){
         alert('Hicieron click')
 
