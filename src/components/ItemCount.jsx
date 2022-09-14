@@ -1,4 +1,9 @@
 import React, {useState} from 'react';
+import { Button } from '@mui/material';
+import Alert from '@mui/material';
+import AlertTitle from '@mui/material';
+import Stack from '@mui/material';
+
 
 export default function ItemCount() {
   const [valorInicial, setvalorInicial] = useState(0);
@@ -19,24 +24,25 @@ export default function ItemCount() {
   
   const agregar = () =>{
     alert(`Se agregaron ${valorInicial}`);
+ 
   };
 
 
     return (
     <div>
         <h1>Productos:{valorInicial}</h1>
-        <button onClick={onAdd}
-        >sumar</button>
+        <Button variant="contained" color="success" size="small"onClick={onAdd}
+        >+</Button>
         
-         <button onClick={restar}
+         <Button variant="contained" color="success" size="small"onClick={restar}
             
-        >Restar</button> <br />
+        >-</Button> <br />
 
-        <button onClick={()=>{
+        <Button variant="outlined" color="success" onClick={()=>{
             if (valorInicial > 0){
                agregar();
-             }
-        }}>Agregar al Carrito</button>
+                    }
+        }}>Agregar al Carrito</Button>
     </div>
   )
 }
