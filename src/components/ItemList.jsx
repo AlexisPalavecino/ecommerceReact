@@ -1,8 +1,9 @@
 import React from 'react'
 import Item from './Item'
+import { useNavigate } from 'react-router-dom'
 
 const ItemList = ({listProducts}) => {
-
+  const navegar = useNavigate()
   return (
     <>
     <div className='cardContainer'>

@@ -7,14 +7,14 @@ import theme from './themeConfig'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Test from './Test/Test';
+import TestLecturaProducts from "./Test/TestLecturaProducts";
 
 //export const contexto = createContext();
 
 
 
 function App() {
-  const saludo = 'Desafio Item y promesas!!!!'
-
+  
   
   return (
     //<contexto.Provider value={{ color, setColor }}>
@@ -27,6 +27,7 @@ function App() {
       <BrowserRouter>
       < NavBar />
         <Routes>
+        {/* <Route path="/Test" element={<TestLecturaProducts />}/> */}
            <Route path="/" element={<ItemListContainer />}/>
           <Route path="/category/:categoryid" element={<ItemListContainer />}/>
           <Route path="/detalle/:id" element={<ItemDetailContainer />}/>

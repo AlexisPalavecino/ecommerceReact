@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 //import { data } from "../mocks/mockdata";
 import { customFech } from "./customFetch";
-
 import ItemDetail from './ItemDetail'
 import products from "./Products";
 
@@ -11,7 +10,7 @@ import products from "./Products";
 export default function ItemDetailContainer() {
 
   const [productDetail, setProductDetail]= useState({})
-  const [loading, setLoading]= useState(false)
+  const [loading, setLoading]= useState(true)
   const {id} = useParams();
 
   useEffect(()=>{

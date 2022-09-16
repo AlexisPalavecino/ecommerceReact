@@ -1,12 +1,13 @@
 //import { padding } from '@mui/system'
 import React from 'react'
 import ItemCount from './ItemCount'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { Button } from '@mui/material';
 
 
 const Item = ({product}) => {
 
-  const{ img, price, title, stock, detail, category} = product
+  const{ id, img, price, title, stock, detail, category} = product
   const navegar = useNavigate()
   return (
     // <div style={{border:'3px solid green', borderRadius:'5px'}}>
@@ -18,8 +19,10 @@ const Item = ({product}) => {
 			<div>Stock : {stock}</div>
 			<div>
 				{detail}
-			</div>
+      </div>
       <ItemCount />
+      <Button variant="contained" color="success" size="small" onClik={()=> navegar(`/detalle/${id}`)}>Ver Mas</Button>
+      
       
     </div>
   )

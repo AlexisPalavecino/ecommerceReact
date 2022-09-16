@@ -3,6 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyClFUmaYkw9I5L4Klj9SnRarhCGniiBT2c",
+  authDomain: "ecommerce-alexis.firebaseapp.com",
+  projectId: "ecommerce-alexis",
+  storageBucket: "ecommerce-alexis.appspot.com",
+  messagingSenderId: "894384810603",
+  appId: "1:894384810603:web:4c4eb9e2944658aff69f2e"
+};
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
