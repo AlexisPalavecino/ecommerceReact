@@ -20,7 +20,7 @@ const Item = ({product}) => {
 			<div>
 				{detail}
       </div>
-      <ItemCount />
+      <ItemCount/>
       <Button variant="contained" color="success" size="small" onClik={()=> navegar(`/detalle/${id}`)}>Ver Mas</Button>
       
       
