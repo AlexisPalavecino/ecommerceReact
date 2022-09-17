@@ -8,15 +8,19 @@ import ItemCount2 from "../Test/ItemCount2"
 
 
 
+
 const ItemDetail = ({productDetail}) => {
   const[count, setCount]= useState(1)
   const [compra, setCompra]= useState(false)
   const navergar = useNavigate()
+  const {addItem}=useCart()
+
   const{id, img, price, title, stock, detail, category} = productDetail
 
   const onAdd = ()=>{
-    console.log('compraste ${count} items del producto ${name}')
+    let purchase = {id, title,price,stock,img, quantity:count}
     setCompra(true)
+    addItem(purchase)
   }
 
 return (

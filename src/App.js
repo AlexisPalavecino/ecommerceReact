@@ -9,6 +9,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import Test from './Test/Test';
 import TestLecturaProducts from "./Test/TestLecturaProducts";
 import Cart from "./components/Cart";
+import {CartProvider} from './context/CartContext'
 
 //export const contexto = createContext();
 
@@ -18,13 +19,10 @@ function App() {
   
   
   return (
-    //<contexto.Provider value={{ color, setColor }}>
+    <CartProvider>
 
     <ThemeProvider theme = {theme}>
       
-      {/* <ItemListContainer saludar = {saludo}/> */}
-      {/* <ItemCount valorInicial={valorInicial} stock={stock} onAdd={onAdd} restar={restar}/> */}
-    {/* <Productos />  */}
       <BrowserRouter>
       < NavBar />
         <Routes>
@@ -42,7 +40,7 @@ function App() {
       
     
     </ThemeProvider>
-    //</contexto.Provider>
+    </CartProvider>
     
   );
   }
