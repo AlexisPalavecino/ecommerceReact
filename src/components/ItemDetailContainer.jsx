@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 //import { data } from "../mocks/mockdata";
-//import { customFech } from "./customFetch";
+import { customFech } from "./customFetch";
 import ItemDetail from './ItemDetail'
 //import products from "./Products";
 
@@ -56,7 +56,7 @@ export default function ItemDetailContainer() {
 
   useEffect(()=>{
     setLoading(true)
-    //customFech(products)
+    customFech(products)
     .then((products)=> setProductDetail(products.find((item)=> item.id === id)))
     .catch((error)=> console.log(error))
     .finally(()=> setLoading(false))

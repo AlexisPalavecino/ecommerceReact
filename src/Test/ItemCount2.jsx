@@ -2,7 +2,7 @@ import { Button } from '@mui/material';
 //import { useState } from 'react';
 
 
-export default function ItemCount2(initial, stock, onAdd, count, setCount) {
+export default function ItemCount2({initial, stock, onAdd, count, setCount}) {
   
  
   const restar =() =>{

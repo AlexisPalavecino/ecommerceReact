@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
-// import { useParams } from 'react-router-dom';
 import { customFech } from './customFetch';
 import ItemList from './ItemList';
 import Products from './Products';
-import {data} from '../mocks/mockData';
+//import {data} from '../mocks/mockData';
 //import Mockdata from '../mocks'
 
 export default function ItemListContainer() {
@@ -16,8 +15,7 @@ const{categoryid} = useParams()
   useEffect(()=>{
   setLoading(true)
   customFech(Products)
-  //data(Products)
-  .then(res=>{
+   .then(res=>{
     if(categoryid){
       setlistProducts(res.filter((item)=>item.category === categoryid))
     }else{

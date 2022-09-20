@@ -4,10 +4,7 @@ import { Button } from "@mui/material"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import ItemCount2 from "../Test/ItemCount2"
-
-
-
-
+import { useCart } from "../context/CartContext"
 
 const ItemDetail = ({productDetail}) => {
   const[count, setCount]= useState(1)
