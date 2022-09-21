@@ -1,15 +1,17 @@
 //import { padding } from '@mui/system'
 import React from 'react'
 import ItemCount2 from './ItemCount'
-import { Link} from 'react-router-dom'
+//import { Link, RouterLink} from 'react-router-dom'
 import { Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+
 
 
 
 const Item = ({product}) => {
 
   const{ id, img, price, title, stock, detail, category} = product
-  //const navegar = useNavigate()
+  const navegar = useNavigate()
   return (
     // <div style={{border:'3px solid green', borderRadius:'5px'}}>
     <div className='cardDetail'>
@@ -22,8 +24,8 @@ const Item = ({product}) => {
 				{detail}
       </div>
       <ItemCount2/>
-      {/* <Button variant="contained" color="success" size="small" onClik={()=> navegar(`/detalle/${id}`)}>Ver Mas</Button> */}
-      <Link variant="contained" color="success" size="small" to={`/detalle/${id}`}>Ver Mas</Link>
+      <Button variant="contained" color="success" size="small" onClick={()=>navegar(`/detalle/${id}`)}>Ver Mas</Button>
+      {/* <Link variant="contained" color="success" size="small" to={`/detalle/${id}`}>Ver Mas</Link> */}
       
       
     </div>

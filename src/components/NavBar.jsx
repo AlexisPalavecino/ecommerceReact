@@ -137,7 +137,9 @@ export default function NavBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <CartWidget /> 
+            <Button  component={RouterLink} to={`/cart`} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}> 
+            <CartWidget /> </Button>
+            
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
