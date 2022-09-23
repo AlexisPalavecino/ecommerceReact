@@ -1,13 +1,13 @@
 //import { padding } from '@mui/system'
-//import ItemCount from './ItemCount'
+import ItemCount from './ItemCount'
 import { Button } from "@mui/material"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import ItemCount2 from "../Test/ItemCount2"
+//import ItemCount2 from "../Test/ItemCount2"
 import { useCart } from "../context/CartContext"
 
-const ItemDetail = ({productDetail}) => {
-  const[count, setCount]= useState(1)
+const ItemDetail = ({productDetail, count}) => {
+  //const[count, setCount]= useState(1)
   const [compra, setCompra]= useState(false)
   const navergar = useNavigate()
   const {addItem}=useCart()
@@ -30,8 +30,11 @@ return (
 			<div>Stock : {stock}</div>
 			<div>
 				{detail}
-			</div>
+			{/* </div>
       {!compra ? <ItemCount2 stock={stock} initial={1} onAdd={onAdd} count={count} setCount={setCount}/> :
+        <div> */}
+        </div>
+      {!compra ? <ItemCount onAdd={onAdd}/> :
         <div>
         <Button onClick={()=>navergar('/cart')}> Ir al carrito</Button>
         <Button onClick={()=>navergar('/')}> Seguir comprando</Button>
