@@ -1,16 +1,23 @@
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
+import { useNavigate } from "react-router-dom"
 
 
 
-
-export default function ItemCount({onAdd}) {
+export default function ItemCount({item}) {
   const[count, setCount]= useState(1)
   const [initial, setInitial] = useState(1);
   const [stock, setStock] = useState(10)
-  
+  const {addItem}=useCart()
+  const [compra, setCompra]= useState(false)
+  const navergar = useNavigate()
 
+  const onAdd = ({id, title, price, stock,img })=>{
+    let purchase = {id, title,price,stock,img, quantity:count}
+    setCompra(true)
+    addItem(purchase)
+  }
   
   const restar =() =>{
     if (count > initial){
@@ -34,7 +41,7 @@ export default function ItemCount({onAdd}) {
         <span>Productos:{count}</span>
          <Button variant="contained" color="success" size="small"onClick={restar}>-</Button> <br />
     </div>
-        <Button variant="outlined" color="success" onClick={onAdd}>Comprar</Button>
+        <Button variant="outlined" color="success" onClick={()=>onAdd(item)}>Comprar</Button>
         
     </>
   )

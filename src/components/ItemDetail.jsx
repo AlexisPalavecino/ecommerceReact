@@ -6,19 +6,19 @@ import { useNavigate } from "react-router-dom"
 //import ItemCount2 from "../Test/ItemCount2"
 import { useCart } from "../context/CartContext"
 
-const ItemDetail = ({productDetail, count}) => {
+const ItemDetail = ({productDetail}) => {
   //const[count, setCount]= useState(1)
-  const [compra, setCompra]= useState(false)
+  //const [compra, setCompra]= useState(false)
   const navergar = useNavigate()
-  const {addItem}=useCart()
+  //const {addItem}=useCart()
 
   const{id, img, price, title, stock, detail, category} = productDetail
 
-  const onAdd = ()=>{
-    let purchase = {id, title,price,stock,img, quantity:count}
-    setCompra(true)
-    addItem(purchase)
-  }
+  // const onAdd = ()=>{
+  //   let purchase = {id, title,price,stock,img, quantity:count}
+  //   setCompra(true)
+  //   addItem(purchase)
+  // }
 
 return (
     // <div style={{border:'3px solid green', borderRadius:'5px'}}>
@@ -33,12 +33,13 @@ return (
 			{/* </div>
       {!compra ? <ItemCount2 stock={stock} initial={1} onAdd={onAdd} count={count} setCount={setCount}/> :
         <div> */}
-        </div>
-      {!compra ? <ItemCount onAdd={onAdd}/> :
-        <div>
+        {/* </div>
+      //{!compra ? <ItemCount item = {productDetail}/> :
+        <div> */}
+        <ItemCount item = {productDetail}/>
         <Button onClick={()=>navergar('/cart')}> Ir al carrito</Button>
         <Button onClick={()=>navergar('/')}> Seguir comprando</Button>
-      </div>}
+      </div>
     </div>
   )
 }

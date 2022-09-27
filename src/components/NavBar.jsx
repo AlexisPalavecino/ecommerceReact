@@ -16,7 +16,7 @@ import CartWidget from './CartWidget';
 import { Link as RouterLink } from 'react-router-dom';
 
 
-const pages = ['Imperial', 'Torpedos', 'Camioneros','Termos'];
+const pages = ['Imperial', 'Torpedo', 'Camionero','Termos'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export default function NavBar() {

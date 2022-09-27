@@ -23,7 +23,7 @@ const Item = ({product}) => {
 			<div>
 				{detail}
       </div>
-      <ItemCount/>
+      <ItemCount item = {product}/>
       <Button variant="contained" color="success" size="small" onClick={()=>navegar(`/detalle/${id}`)}>Ver Mas</Button>
       {/* <Link variant="contained" color="success" size="small" to={`/detalle/${id}`}>Ver Mas</Link> */}
       
