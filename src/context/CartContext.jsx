@@ -10,7 +10,7 @@ export const CartProvider = ({children}) =>{
           if(existsInCart){
             const cartAct = cart.map((prod)=>{
                 if(prod.id === item.id){
-                    return{... prod, quantity:prod.quantity + item.quantity}
+                    return{...prod, quantity:prod.quantity + item.quantity}
                 }else{
                     return prod
                 }

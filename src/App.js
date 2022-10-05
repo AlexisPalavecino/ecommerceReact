@@ -6,10 +6,11 @@ import { ThemeProvider } from '@mui/material';
 import theme from './themeConfig'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import Test from './Test/Test';
+import Checkout from './components/Checkout';
 import TestLecturaProducts from "./Test/TestLecturaProducts";
 import Cart from "./components/Cart";
 import {CartProvider} from './context/CartContext'
+
 
 //export const contexto = createContext();
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/category/:categoryid" element={<ItemListContainer />}/>
           <Route path="/detalle/:id" element={<ItemDetailContainer />}/>
           <Route path="/cart" element={<Cart/>}/>
+          <Route path="/checkout" element={<Checkout />}/>
           
         </Routes>
        

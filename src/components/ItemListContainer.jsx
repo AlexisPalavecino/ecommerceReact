@@ -1,11 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
-import { customFech } from './customFetch';
 import ItemList from './ItemList';
-import Products from './Products';
 import {collection, getDocs, query, where} from 'firebase/firestore'
 import {db} from '../firebase/firebase'
-import products from './Products';
 import { CircularProgress } from '@mui/material';
 import Box from '@mui/material/Box';
 //import {data} from '../mocks/mockData';
@@ -15,12 +12,12 @@ export default function ItemListContainer() {
 
 const [listProducts, setlistProducts]=useState([])
 const [loading, setLoading]= useState(false)
-const{categoriaId} = useParams()
+const{categoryid} = useParams()
 
 //con firebase
 useEffect(()=>{
   setLoading(true)
-  const productos = categoriaId ?query(collection(db, "produts"), where("category", "==", categoriaId)) :collection(db, "products")
+  const productos = categoryid ?query(collection(db, "products"), where("category", "==", categoryid)) :collection(db, "products")
   getDocs(productos)
   .then((result)=>{
     const list = result.docs.map((products)=>{
@@ -34,7 +31,7 @@ useEffect(()=>{
 })
   .catch((error)=>console.log(error))
   .finally(()=>setLoading(false))
-},[categoriaId])
+},[categoryid])
 
 
 // con customFech

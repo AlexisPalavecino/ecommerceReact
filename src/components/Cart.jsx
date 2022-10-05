@@ -26,7 +26,7 @@ export default function Cart() {
           <span>Total a pagar: ${cartTotal()}</span>
           <div>
           <Button onClick={clear}>Vaciar carrito</Button>
-          <Button>Terminar Compra</Button>
+          <Button onClick={()=>navegar(`/checkout`)}>Terminar Compra</Button>
           </div>
 
         </div>
