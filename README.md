@@ -48,7 +48,7 @@ Insert gif or link to demo
 
 
 ## 🚀 About Me
-Soy  desarrolaldor full stack, este es uno de mis proyectos.
-Pueden visitar mi repositorio en GitHub para ver más de mis proyectos :
+Soy  desarrollador full stack, este es uno de mis proyectos.
+Para ver más de mis proyectos, pueden visitar mi repositorio en GitHub:
 https://github.com/AlexisPalavecino
 
