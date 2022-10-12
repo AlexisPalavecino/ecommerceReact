@@ -43,7 +43,7 @@ React Router DOM
 
 
 ## Demo
-"https://i.postimg.cc/wBGjT5Qq/React-App-Ecommerce-2022-10-12-20-27-30.gif"
+https://i.postimg.cc/P51WDxRn/React-App-Ecommerce-2022-10-12-20-27-30.gif
 
 
 
