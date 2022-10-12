@@ -3,6 +3,11 @@ import { Button } from '@mui/material';
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import { collection, addDoc, getFirestore } from "firebase/firestore";
+import Box from '@mui/material/Box';
+
+import TextField from '@mui/material/TextField';
+
+
 
 
 export default function Checkout() {
@@ -11,6 +16,7 @@ export default function Checkout() {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [orderId, setOrderId] = useState("");
+    
 
     function validateForm(){
         const order = {
@@ -19,12 +25,19 @@ export default function Checkout() {
             //cartTotal, me lo toma como función y no como un string
             
         };
-        console.log(order);
-        //FALTA VALIDAR
+        let validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
+        let validName = String
+       if (validEmail.test(email) || validName.test(name)){
+            
         const db =getFirestore();
         const orders = collection(db, 'orders');
         addDoc(orders, order).then(( {id} ) => {
             setOrderId(id)})
+       } else{
+        alert('El email no es correcto')
+        alert('Ingrese su nombre')
+        alert('Ingrese su telefono')
+       }
     }
 
   return (
@@ -32,11 +45,14 @@ export default function Checkout() {
     {orderId? "GRACIAS POR TU COMPRA. TU NUMERO DE ORDEN ES: " + orderId : 
     <div>
         <h3>Para terminar la compra por favor ingrese los siguientes datos:</h3>
-        <input type="text" placeholder='Ingrese su Nombre' onChange={(e)=>setName(e.target.value)}/> <br />
-        <input type="email" placeholder='Ingrese su email' onChange={(e)=>setEmail(e.target.value)} /> <br />
-        <input type="phone" placeholder='Ingrese su telefono' onChange={(e)=>setPhone(e.target.value)}/> <br />
-
-        <button onClick={validateForm}> FINALIZAR COMPRA </button>
+    <Box      component="form"      sx={{        '& > :not(style)': { m: 1, width: '25ch' },      }}      noValidate      autoComplete="off"> 
+      <TextField id="outlined-basic" label="Nombre" variant="outlined" onChange={(e)=>setName(e.target.value)}/>
+      <TextField id="outlined-basic" label="Email" variant="outlined" onChange={(e)=>setEmail(e.target.value)}/>
+      <TextField id="outlined-basic" label="Telefono" variant="outlined" onChange={(e)=>setPhone(e.target.value)}/>
+    
+    </Box>
+        
+        <Button onClick={validateForm}> FINALIZAR COMPRA </Button>
 
 
 
