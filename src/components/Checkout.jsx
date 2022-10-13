@@ -26,17 +26,15 @@ export default function Checkout() {
             
         };
         let validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
-        let validName = String
-       if (validEmail.test(email) || validName.test(name)){
+        //let validName = String
+       if (validEmail.test(email)){
             
         const db =getFirestore();
         const orders = collection(db, 'orders');
         addDoc(orders, order).then(( {id} ) => {
             setOrderId(id)})
        } else{
-        alert('El email no es correcto')
-        alert('Ingrese su nombre')
-        alert('Ingrese su telefono')
+        alert("ingrese un email correcto")
        }
     }
 
